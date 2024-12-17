@@ -1,6 +1,7 @@
 from sklearn.model_selection import train_test_split
 from sklearn.ensemble import RandomForestClassifier
 import pandas as pd
+import os
 
 # Load data
 data = pd.read_csv('src/models/classification_data.csv')
