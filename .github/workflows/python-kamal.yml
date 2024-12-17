@@ -28,7 +28,7 @@ jobs:
       - name: Train Model
         run: python src/models/train.py
 
-      - name: Commit and Push Changes
+      - name: Commit and Push Changes .
         run: |
           git config --global user.name "github-actions"
           git config --global user.email "kamal480@users.noreply.github.com"
