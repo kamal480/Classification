@@ -15,5 +15,10 @@ model = RandomForestClassifier(random_state=42)
 model.fit(X_train, y_train)
 
 # Save the trained model
+output_dir = 'src/models/'
+os.makedirs(output_dir, exist_ok=True)
+joblib.dump(model, os.path.join(output_dir, 'classification_model.pkl'))
+print("Model saved successfully in 'src/models/classification_model.pkl'")
+
 import joblib
 joblib.dump(model, 'src/models/classification_model.pkl')
