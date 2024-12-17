@@ -16,4 +16,4 @@ model.fit(X_train, y_train)
 
 # Save the trained model
 import joblib
-joblib.dump(model, 'classification_model.pkl')
+joblib.dump(model, 'src/models/classification_model.pkl')
