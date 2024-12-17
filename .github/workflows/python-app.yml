@@ -1,0 +1,51 @@
+name: CI/CD Pipeline
+
+on:
+  push:
+    branches:
+      - main
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout Code
+        uses: actions/checkout@v3
+      
+      - name: Set up Python
+        uses: actions/setup-python@v3
+        with:
+          python-version: 3.x
+      
+      - name: Install Dependencies
+        run: |
+          python -m pip install --upgrade pip
+          pip install -r requirements.txt
+      
+      - name: Run Tests
+        run: pytest tests/
+
+      - name: Train Model
+        run: python src/models/train.py
+      
+      - name: Push to Docker Hub (Optional)
+        uses: docker/login-action@v2
+        with:
+          username: kamal480
+          password: dckr_pat_pgoDrkvANHWsp5sUG9XT-ZFRWoA
+        
+      - name: Deploy Model (Optional)
+        uses: Azure/openai-deploy@v1
+        with:
+          model-path: ./model_directory/
+
+      - name: Commit Changes
+        uses: actions/checkout@v3
+        with:
+          ref: main
+
+      - name: Merge Pull Request
+        uses: actions/checkout@v3
+        with:
+          ref: ${{ github.event.pull_request.head.sha }}
