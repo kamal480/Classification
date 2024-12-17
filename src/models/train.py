@@ -15,7 +15,7 @@ X_train, X_test, y_train, y_test = train_test_split(X, y, test_size=0.2, random_
 model = RandomForestClassifier(random_state=42)
 model.fit(X_train, y_train)
 
-# Save the trained model-nv
+# Save the trained model-nv2
 import joblib
 output_dir = 'src/models/'
 os.makedirs(output_dir, exist_ok=True)
