@@ -27,6 +27,9 @@ jobs:
 
       - name: Train Model
         run: python src/models/train.py
+     
+      - name: Check GITHUB_TOKEN
+        run: echo ${{ secrets.GITHUB_TOKEN }}
 
       - name: Commit and Push Changes
         run: |
