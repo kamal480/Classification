@@ -24,7 +24,7 @@ jobs:
           pip install -r requirements.txt
       
       - name: Check if file exists
-        run: ls /src/models/classification_data.csv 
+        run: ls src/models/classification_data.csv 
       
       - name: Train Model
         run: python src/models/train.py
