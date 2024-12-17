@@ -2,5 +2,4 @@ requests
 streamlit
 scikit-learn
 joblib
-os
 
