@@ -35,4 +35,6 @@ jobs:
           git add src/models/classification_model.pkl
           git commit -m "Add trained model file" || echo "No changes to commit"
           git push https://github.com/kamal480/Classification.git
+      - name: Run Tests
+        run: pytest tests/
           
