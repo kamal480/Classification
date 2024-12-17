@@ -4,7 +4,7 @@ import pandas as pd
 
 def test_model_prediction():
     # Load model
-    model = joblib.load('src/model/classification_model.pkl')
+    model = joblib.load('src/models/classification_model.pkl')
 
     # Load data
     data = pd.read_csv('data/classification_data.csv')
