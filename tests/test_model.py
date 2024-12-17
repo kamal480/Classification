@@ -4,10 +4,10 @@ import pandas as pd
 
 def test_model_prediction():
     # Load model
-    model = joblib.load('../model/classification_model.pkl')
+    model = joblib.load('src/model/classification_model.pkl')
 
     # Load data
-    data = pd.read_csv('../data/classification_data.csv')
+    data = pd.read_csv('data/classification_data.csv')
     X = data.drop(columns=['class'])
 
     # Make predictions
