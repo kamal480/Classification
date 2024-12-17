@@ -28,7 +28,7 @@ jobs:
       - name: Commit and Push Model File
         run: |
           git config --global user.name "github-actions"
-          git config --global user.email "kamal480@gmail.com"
+          git config --global user.email "kamal480@users.noreply.github.com"
           git add src/models/classification_model.pkl
           git commit -m "Add trained model file"
           git push
