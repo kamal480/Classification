@@ -1,7 +1,6 @@
 from sklearn.model_selection import train_test_split
 from sklearn.ensemble import RandomForestClassifier
 import pandas as pd
-joblib
 import os
 
 # Load data
@@ -17,10 +16,11 @@ model = RandomForestClassifier(random_state=42)
 model.fit(X_train, y_train)
 
 # Save the trained model
+import joblib
 output_dir = 'src/models/'
 os.makedirs(output_dir, exist_ok=True)
 joblib.dump(model, os.path.join(output_dir, 'classification_model.pkl'))
 print("Model saved successfully in 'src/models/classification_model.pkl'")
 
-import joblib
+
 joblib.dump(model, 'src/models/classification_model.pkl')
