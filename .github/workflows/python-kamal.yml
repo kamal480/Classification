@@ -32,3 +32,5 @@ jobs:
           git add src/models/classification_model.pkl
           git commit -m "Add trained model file"
           git push
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
