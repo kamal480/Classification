@@ -12,7 +12,7 @@ def test_model_prediction():
 
     # Make predictions
     predictions = model.predict(X)
-
+    print(predictions)
     # Assertions
     assert len(predictions) == len(X)
     assert set(predictions) <= {0, 1}
